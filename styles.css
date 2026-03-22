@@ -1,0 +1,164 @@
+:root {
+  --bg: #f4efe6;
+  --card: #fffaf2;
+  --text: #2f241c;
+  --muted: #6d5b4f;
+  --primary: #1b7a6b;
+  --primary-strong: #145f53;
+  --error: #ad1f1f;
+  --border: #d5c3ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, #ffe9bf 0%, transparent 35%),
+    radial-gradient(circle at 90% 90%, #c7f2eb 0%, transparent 30%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(47, 36, 28, 0.08);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #7fd8ca;
+  border-color: var(--primary);
+}
+
+fieldset {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.radio-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.radio-row input {
+  width: auto;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+}
+
+button:hover {
+  background: var(--primary-strong);
+}
+
+button.secondary {
+  background: #a38a74;
+}
+
+button.secondary:hover {
+  background: #846f5e;
+}
+
+.error {
+  color: var(--error);
+  min-height: 18px;
+  display: block;
+  margin-top: 4px;
+  font-size: 0.86rem;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: 600;
+  min-height: 22px;
+}
+
+.message.success {
+  color: #106b3e;
+}
+
+.message.fail {
+  color: var(--error);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+  }
+}
